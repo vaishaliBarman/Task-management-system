@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+   
+
+  .glass-effect-box {
+    border-radius: 25px;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    animation: fadeInGlass 1.8s ease-in-out forwards;
+    max-width: 900px;
+    width: 100%;
+  }
+  
+  /* Typewriter & Animated Text */
+  .tsm-animated-text {
+    font-family: 'Rancho', cursive;
+    color: #2c93a5;
+
+    font-size: 1.5rem;
+    opacity: 0;
+    animation: slideUpText 1.6s ease-out forwards;
+  }
+  
+  .typewriter {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    
+    animation: typing 2.8s steps(40, end), blinkCursor 0.8s step-end infinite;
+    font-size: 1.8rem;
+     
+  
+  }
+  
+  /* Responsive font sizes for typewriter */
+  @media (min-width: 768px) {
+    .typewriter {
+      font-size: 2.2rem;
+    }
+  }
+  @media (min-width: 992px) {
+    .typewriter {
+      font-size: 2.5rem;
+    }
+  }
+ 
+  /* Keyframes */
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blinkCursor {
+    50% { border-color: transparent; }
+  }
+  
+  @keyframes fadeInGlass {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slideUpText {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  @keyframes fadeInText {
+    to { opacity: 1; }
+  }
+  
+  /* Button */
+  #go {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #9055fd;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    box-shadow: 0 0 10px #e4e4eb, 0 0 20px #a6a5a7;
+    transition: transform 0.3s ease;
+  }
+  
+  #go:hover {
+    transform: scale(1.1);
+  }
+  
+  .animated-dash::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 3px dashed white;
+    border-radius: 50%;
+    animation: dashRotate 2s linear infinite;
+    z-index: -1;
+  }
+  
+  @keyframes dashRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .typewriter {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #2c93a5;
+    border-right: 2px solid #d3c9c3ab;
+    animation: typing 2.5s steps(30, end), blinkCursor 0.7s step-end infinite;
+    max-width: 100%;
+    font-size: 2rem;
+    word-break: break-word;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .typewriter {
+      font-size: 1.3rem;
+      white-space: normal; /* allow wrapping on small screens */
+      animation: none; /* Disable typewriter on very small screens for clean wrap */
+      border-right: none;
+    }
+  }
+    @media screen and (max-width: 480px) {
+        .typewriter {
+        font-size: 1.2rem;
+        }
+    }  
